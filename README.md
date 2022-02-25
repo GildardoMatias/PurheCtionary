@@ -1,6 +1,6 @@
 # apppurhepecha
 
-A new Flutter project.
+Proyecto independiente para impulsar la digitalizacion de nuestra lengua meterna
 
 ## Getting Started
 
