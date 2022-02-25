@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Diccionario',
       theme: ThemeData(
         //Vladys sama
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blueGrey,
       ),
       home: Inicio(),
     );
