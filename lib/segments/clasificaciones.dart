@@ -1,40 +1,42 @@
 import 'package:flutter/material.dart';
 
 class Clasificacion extends StatelessWidget {
-  const Clasificacion({
-    Key key,
-  }) : super(key: key);
+  final String titulo;
+  final String imagen;
+  const Clasificacion({Key key, this.titulo, this.imagen}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Card(
-        color: Colors.cyan,
+        color: Color(0xff24B34C),
         child: Column(
           children: <Widget>[
             SizedBox(
-              height: 150.0,
+              height: 140.0,
               child: Stack(
                 children: <Widget>[
                   Positioned.fill(
-                    child: Image(
-                      image: AssetImage('assets/bandera.jpg'),
-                      fit: BoxFit.cover,
+                    bottom: 10.0,
+                    left: 10.0,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 180),
+                      child:
+                          Image(image: AssetImage(imagen), fit: BoxFit.contain),
                     ),
                   ),
                   Positioned(
-                    bottom: 16.0,
+                    bottom: 0.0,
                     left: 16.0,
-                    right: 16.0,
                     child: FittedBox(
                       fit: BoxFit.scaleDown,
-                      alignment: Alignment.centerLeft,
+                      alignment: Alignment.bottomLeft,
                       child: Text(
-                        'Card 4 (complex example)',
+                        titulo,
                         style: Theme.of(context)
                             .textTheme
                             .headline5
-                            .copyWith(color: Colors.white),
+                            .copyWith(color: Colors.black),
                       ),
                     ),
                   )
@@ -46,11 +48,13 @@ class Clasificacion extends StatelessWidget {
               children: <Widget>[
                 TextButton(
                   onPressed: () {},
-                  child: const Text('SHARE'),
-                ),
-                TextButton(
-                  onPressed: () {},
-                  child: const Text('EXPLORE'),
+                  child: const Text(
+                    'Abrir',
+                    style: TextStyle(
+                        color: Color(0xffF8EF07),
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
               ],
             ),
