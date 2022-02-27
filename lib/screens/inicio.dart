@@ -6,6 +6,7 @@ class Inicio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color(0xffD8E8F6),
         appBar: AppBar(
           title: Text('Diccionario Purhépecha'),
           actions: <Widget>[
@@ -26,9 +27,7 @@ class Inicio extends StatelessWidget {
           ],
         ),
         body: Container(
-          decoration: BoxDecoration(color: Colors.red),
           padding: EdgeInsets.all(10.0),
-          height: 700,
           alignment: Alignment.center,
           child: LSliverAppBar(),
         ));
@@ -43,7 +42,7 @@ class LSliverAppBar extends StatelessWidget {
       child: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
-            backgroundColor: Colors.amber,
+            backgroundColor: Color(0xffA14B9B),
             pinned: true,
             expandedHeight: 180.0,
             flexibleSpace: FlexibleSpaceBar(
@@ -51,16 +50,44 @@ class LSliverAppBar extends StatelessWidget {
                 image: AssetImage('assets/bandera.jpg'),
                 fit: BoxFit.cover,
               ),
-              title: Text(
-                'Vocabulario',
-                style: TextStyle(
-                    color: Colors.black, backgroundColor: Colors.white70),
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    'Vocabulario',
+                    style: TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                  ),
+                ],
               ),
             ),
           ),
           SliverList(
               delegate: SliverChildListDelegate([
-            Clasificacion(),
+            Clasificacion(
+              titulo: 'Partes del cuerpo',
+              imagen: 'assets/cuerpo.png',
+            ),
+            Clasificacion(
+              titulo: 'Colores',
+              imagen: 'assets/ruedaColor.png',
+            ),
+            Clasificacion(
+              titulo: 'Nùmeros',
+              imagen: 'assets/numeros.png',
+            ),
+            Clasificacion(
+              titulo: 'Saludos',
+              imagen: 'assets/saludo.png',
+            ),
+            Clasificacion(
+              titulo: 'Animales',
+              imagen: 'assets/ganado.png',
+            ),
+            Clasificacion(
+              titulo: 'Objetos basicos',
+              imagen: 'assets/escoba.png',
+            ),
           ])),
         ],
       ),
