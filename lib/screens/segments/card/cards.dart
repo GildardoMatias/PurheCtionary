@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 class Clasificacion extends StatelessWidget {
   final String titulo;
   final String imagen;
-  const Clasificacion({Key key, this.titulo, this.imagen}) : super(key: key);
+  final Widget page;
+  const Clasificacion({Key key, this.titulo, this.imagen, this.page})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -43,28 +45,43 @@ class Clasificacion extends StatelessWidget {
                 ],
               ),
             ),
-            ButtonBar(
-              alignment: MainAxisAlignment.end,
-              children: <Widget>[
-                TextButton(
-                  style: TextButton.styleFrom(
-                      backgroundColor: Color(0xff9ADCFF),
-                      shape: StadiumBorder(),
-                      elevation: 5),
-                  onPressed: () {},
-                  child: const Text(
-                    'Abrir',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ],
+            BotonAbrir(
+              pages: page,
             ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class BotonAbrir extends StatelessWidget {
+  final Widget pages;
+  const BotonAbrir({Key key, this.pages}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ButtonBar(
+      alignment: MainAxisAlignment.end,
+      children: <Widget>[
+        TextButton(
+          style: TextButton.styleFrom(
+              backgroundColor: Color(0xff9ADCFF),
+              shape: StadiumBorder(),
+              elevation: 5),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => pages),
+            );
+          },
+          child: const Text(
+            'Abrir',
+            style: TextStyle(
+                color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+        ),
+      ],
     );
   }
 }
