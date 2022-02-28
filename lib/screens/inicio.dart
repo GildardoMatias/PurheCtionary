@@ -6,7 +6,7 @@ class Inicio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xffD8E8F6),
+        backgroundColor: Color(0xff9ADCFF),
         appBar: AppBar(
           title: Text('Diccionario Purhépecha'),
           actions: <Widget>[
@@ -16,7 +16,7 @@ class Inicio extends StatelessWidget {
                 iconSize: 35,
                 icon: const Icon(
                   Icons.search_sharp,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
                 tooltip: 'Buscar Palabras',
                 onPressed: () {
@@ -42,7 +42,7 @@ class LSliverAppBar extends StatelessWidget {
       child: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
-            backgroundColor: Color(0xffA14B9B),
+            backgroundColor: Color(0xffA14B9B).withOpacity(0.8),
             pinned: true,
             expandedHeight: 180.0,
             flexibleSpace: FlexibleSpaceBar(
@@ -56,7 +56,9 @@ class LSliverAppBar extends StatelessWidget {
                   Text(
                     'Vocabulario',
                     style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold),
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 25),
                   ),
                 ],
               ),
@@ -78,7 +80,7 @@ class LSliverAppBar extends StatelessWidget {
             ),
             Clasificacion(
               titulo: 'Saludos',
-              imagen: 'assets/saludo.png',
+              imagen: 'assets/manos.png',
             ),
             Clasificacion(
               titulo: 'Animales',
@@ -86,7 +88,7 @@ class LSliverAppBar extends StatelessWidget {
             ),
             Clasificacion(
               titulo: 'Objetos basicos',
-              imagen: 'assets/escoba.png',
+              imagen: 'assets/limpieza.png',
             ),
           ])),
         ],

@@ -9,7 +9,7 @@ class Clasificacion extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Card(
-        color: Color(0xff24B34C),
+        color: Colors.white.withOpacity(0),
         child: Column(
           children: <Widget>[
             SizedBox(
@@ -47,11 +47,15 @@ class Clasificacion extends StatelessWidget {
               alignment: MainAxisAlignment.end,
               children: <Widget>[
                 TextButton(
+                  style: TextButton.styleFrom(
+                      backgroundColor: Color(0xff9ADCFF),
+                      shape: StadiumBorder(),
+                      elevation: 5),
                   onPressed: () {},
                   child: const Text(
                     'Abrir',
                     style: TextStyle(
-                        color: Color(0xffF8EF07),
+                        color: Colors.black,
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
                   ),
