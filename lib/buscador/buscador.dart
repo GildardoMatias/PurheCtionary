@@ -1,6 +1,9 @@
+import 'package:apppurhepecha/buscador/motor.dart';
 import 'package:flutter/material.dart';
 
 class BuscadorDelegate extends SearchDelegate {
+  final motor m = new motor();
+
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
@@ -17,8 +20,9 @@ class BuscadorDelegate extends SearchDelegate {
 
   @override
   Widget buildResults(BuildContext context) {
-    //print(query);
-    return Text('build3');
+    print(query);
+    // return Text('build3');
+    return Text(m.buscar(query));
   }
 
   @override
