@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:apppurhepecha/screens/buscador/buscador.dart';
 
 class BasePage extends StatelessWidget {
+  final String title;
   final Container container;
-  const BasePage({Key key, this.container}) : super(key: key);
+  const BasePage({Key key, this.title, this.container}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff9ADCFF),
       appBar: AppBar(
-        title: Text('Buscar palabra'),
+        title: Text(title),
         actions: <Widget>[
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
