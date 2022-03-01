@@ -13,8 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Diccionario',
       theme: ThemeData(
-        //Vladys sama
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: Colors.lightBlue,
       ),
       home: Inicio(),
     );
